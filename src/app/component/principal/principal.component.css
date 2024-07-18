@@ -1,0 +1,56 @@
+.rest {
+  background-color: #cdfecc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 110vh;
+}
+.announcement-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 7px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 1250px;
+  text-align: center;
+}
+.announcement-container h2 {
+  font-size: 44px;
+  font-weight: bold;
+}
+.announcement-container p {
+  font-size: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.form-group button {
+  width: 50%;
+  padding: 10px;
+  border: none;
+  border-radius: 7px;
+  background-color: #ff0000;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-group button:hover {
+  background-color: rgb(197, 0, 0);
+}
+
+.image-container {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  height: 30vh; /* Opcional: para centrar verticalmente en toda la altura de la pantalla */
+}
+
+img {
+  max-width: 100%; /* Asegura que la imagen no exceda el contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+}

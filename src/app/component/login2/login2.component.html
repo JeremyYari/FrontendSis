@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="left">
+        <h1>SISVITA</h1>
+    </div>
+    <div class="right">
+        <h2>BIENVENIDO</h2>
+        <div class="form-container">
+            <h2>Iniciar Sesión</h2>
+            <div class="form-group">
+                <label for="email">Correo institucional:</label>
+                <input [(ngModel)]="loginObj.correo" type="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input [(ngModel)]="loginObj.contrasena" type="password" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <button (click)="onLogin()">Iniciar sesión</button>
+            </div>
+            <div class="form-group">
+                <button onclick="window.location.href='/registrar-usuario'">Registrar usuario</button>
+            </div>
+        </div>
+    </div>
+</div>

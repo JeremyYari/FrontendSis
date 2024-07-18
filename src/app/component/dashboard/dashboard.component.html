@@ -1,0 +1,59 @@
+<router-outlet>
+  <app-navbar-simple2></app-navbar-simple2>
+</router-outlet>
+<div class="dashboard-container">
+  <form [formGroup]="userForm" class="form-container">
+    <h2>Actualizar Usuario</h2>
+    <div class="form-group">
+      <label for="correo">Correo:</label>
+      <input id="correo" formControlName="correo" type="email">
+    </div>
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" formControlName="nombre" type="text">
+    </div>
+    <div class="form-group">
+      <label for="apellidos">Apellidos:</label>
+      <input id="apellidos" formControlName="apellidos" type="text">
+    </div>
+    <div class="form-group">
+      <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+      <input id="fecha_nacimiento" type="date" formControlName="fecha_nacimiento">
+    </div>
+    <div class="form-group buttons">
+      <button type="button" (click)="actualizarUsuario()">Guardar</button>
+      <button type="button" (click)="eliminarUsuario()">Eliminar</button>
+    </div>
+  </form>
+
+  <div *ngIf="updateError" class="error-message">
+    <p>{{ updateError }}</p>
+  </div>
+
+  <div *ngIf="usuarios.length > 0" class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+          <th>Fecha de Nacimiento</th>
+          <th>Correo</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of usuarios">
+          <td>{{ usuario.usuario_id }}</td>
+          <td>{{ usuario.nombre }}</td>
+          <td>{{ usuario.apellidos }}</td>
+          <td>{{ usuario.fecha_nacimiento | date }}</td>
+          <td>{{ usuario.correo }}</td>
+          <td>
+            <button (click)="seleccionarUsuario(usuario)">Seleccionar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

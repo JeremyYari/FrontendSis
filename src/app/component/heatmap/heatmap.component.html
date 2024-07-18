@@ -1,0 +1,57 @@
+<router-outlet>
+  <app-navbar-simple2></app-navbar-simple2>
+</router-outlet>
+<div class="rest">
+  <div class="heatmap-container">
+    <google-map [center]="center" [zoom]="zoom" [options]="options">
+      <map-marker *ngFor="let data of heatmapData"
+                  [position]="data.position"
+                  [title]="data.title"
+                  [icon]="{
+                    url: 'http://maps.google.com/mapfiles/ms/icons/' + data.color + '-dot.png'
+                  }">
+      </map-marker>
+    </google-map>
+  </div>
+
+  <div class="table-container">
+    <table mat-table [dataSource]="heatmapData" class="mat-elevation-z8">
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="apellidos">
+        <th mat-header-cell *matHeaderCellDef> Apellidos </th>
+        <td mat-cell *matCellDef="let element"> {{element.apellidos}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="puntaje">
+        <th mat-header-cell *matHeaderCellDef> Puntaje </th>
+        <td mat-cell *matCellDef="let element"> {{element.puntaje}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="resultado">
+        <th mat-header-cell *matHeaderCellDef> Resultado </th>
+        <td mat-cell *matCellDef="let element"> {{element.resultado}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="comentarios">
+        <th mat-header-cell *matHeaderCellDef> Comentarios </th>
+        <td mat-cell *matCellDef="let element; let i = index">
+          <textarea [formControl]="getCommentControl(i)" placeholder="Agregar comentario"></textarea>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element; let i = index">
+          <button (click)="saveComment(i)">Guardar</button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>

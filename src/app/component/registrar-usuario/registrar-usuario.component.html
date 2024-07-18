@@ -1,0 +1,166 @@
+<div class="container centered-container">
+  <div class="row">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Registro de Usuarios</h5>
+        <form class="row g-4 needs-validation" [formGroup]="UsuarioForm">
+          <div class="form-group">
+            <label for="InputApellidos" class="form-label">Apellidos:</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Ingrese sus apellidos"
+              formControlName="apellidos"
+            />
+            <div
+              class="text-danger"
+              *ngIf="
+                UsuarioForm.controls['apellidos'].invalid &&
+                (isFormSubmitted ||
+                  UsuarioForm.controls['apellidos'].touched ||
+                  UsuarioForm.controls['apellidos'].dirty)
+              "
+            >
+              <span
+                *ngIf="UsuarioForm.controls['apellidos'].errors?.['required']"
+                >Este campo es requerido</span
+              >
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="InputNombre" class="form-label">Nombres:</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Ingrese sus nombres"
+              formControlName="nombre"
+            />
+            <div
+              class="text-danger"
+              *ngIf="
+                UsuarioForm.controls['nombre'].invalid &&
+                (isFormSubmitted ||
+                  UsuarioForm.controls['nombre'].touched ||
+                  UsuarioForm.controls['nombre'].dirty)
+              "
+            >
+              <span
+                *ngIf="UsuarioForm.controls['nombre'].errors?.['required']"
+                >Este campo es requerido</span
+              >
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="FNac" class="form-label">Fecha Nacimiento:</label>
+            <input
+              type="date"
+              class="form-control"
+              placeholder="Ingrese la fecha de nacimiento dd/mm/yyyy"
+              formControlName="fecha_nacimiento"
+            />
+          </div>
+          <div class="form-group">
+            <label for="InputCorreo" class="form-label">Correo Institucional:</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Ingrese su correo institucional"
+              formControlName="correo"
+            />
+            <div
+              class="text-danger"
+              *ngIf="
+                UsuarioForm.controls['correo'].invalid &&
+                (isFormSubmitted ||
+                  UsuarioForm.controls['correo'].touched ||
+                  UsuarioForm.controls['correo'].dirty)
+              "
+            >
+              <span
+                *ngIf="UsuarioForm.controls['correo'].errors?.['required']"
+                >Este campo es requerido</span
+              >
+              <span
+                *ngIf="UsuarioForm.controls['correo'].errors?.['email']"
+                >Ingrese un correo válido</span
+              >
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="InputContrasena" class="form-label">Contraseña:</label>
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Ingrese su contraseña"
+              formControlName="contrasena"
+            />
+            <div
+              class="text-danger"
+              *ngIf="
+                UsuarioForm.controls['contrasena'].invalid &&
+                (isFormSubmitted ||
+                  UsuarioForm.controls['contrasena'].touched ||
+                  UsuarioForm.controls['contrasena'].dirty)
+              "
+            >
+              <span
+                *ngIf="UsuarioForm.controls['contrasena'].errors?.['required']"
+                >Este campo es requerido</span
+              >
+              <span
+                *ngIf="UsuarioForm.controls['contrasena'].errors?.['minlength']"
+                >La contraseña debe tener al menos 8 caracteres</span
+              >
+            </div>
+          </div>
+
+          <!-- Campo para seleccionar el tipo de usuario -->
+          <div class="form-group">
+            <label for="TipoUsuario" class="form-label">Tipo de Usuario:</label>
+            <select
+              class="form-control"
+              formControlName="tipo_usuario"
+            >
+              <option value="1">Estudiante</option>
+              <option value="2">Especialista</option>
+            </select>
+            <div
+              class="text-danger"
+              *ngIf="
+                UsuarioForm.controls['tipo_usuario'].invalid &&
+                (isFormSubmitted ||
+                  UsuarioForm.controls['tipo_usuario'].touched ||
+                  UsuarioForm.controls['tipo_usuario'].dirty)
+              "
+            >
+              <span
+                *ngIf="UsuarioForm.controls['tipo_usuario'].errors?.['required']"
+                >Este campo es requerido</span
+              >
+            </div>
+          </div>
+
+          <!-- Campo de coordenadas, oculto para el usuario -->
+          <div class="form-group">
+            <input type="hidden" formControlName="coordenadas" />
+          </div>
+
+          <div class="form-group">
+            <button
+              type="submit"
+              class="btn btn-primary btn-navyblue"
+              [disabled]="!UsuarioForm.valid"
+              (click)="registrarUsuario()"
+              >
+              Registrar
+              </button>
+              <button class="btn btn-danger" type="button" (click)="cancelarRegistro()">
+              Cancelar
+              </button>
+              </div>
+              </form>
+              </div>
+              </div>
+              
+                </div>
+              </div>

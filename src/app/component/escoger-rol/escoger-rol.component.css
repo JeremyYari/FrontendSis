@@ -1,0 +1,50 @@
+.rest {
+  background-color: #cdfecc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.right {
+  display: flex;
+  gap: 60px; /* Adds space between the form containers */
+}
+
+.form-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 7px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  font-size: 19px;
+  height: 70vh; /* Adjust this value as needed */
+  width: 70vh;
+  overflow-y: auto; /* Ensures the container itself scrolls */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 7px;
+  background-color: #22b439;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-group button:hover {
+  background-color: rgb(65, 150, 65);
+}

@@ -1,0 +1,43 @@
+.rest {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .resultados-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+  }
+  
+  .resultados-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .resultados-table th,
+  .resultados-table td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  .resultados-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .resultados-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .noResultados {
+    margin-top: 20px;
+  }
+  

@@ -1,0 +1,33 @@
+<router-outlet></router-outlet>
+<app-navbar-simple></app-navbar-simple>
+
+<div class="rest">
+  <div class="resultados-container">
+    <h2>Resultados de Test de Ansiedad</h2>
+
+    <div *ngIf="resultados.length > 0; else noResultados">
+      <table class="resultados-table">
+        <thead>
+          <tr>
+            <th>Test ID</th>
+            <th>Puntaje</th>
+            <th>Resultado</th>
+            <th>Comentarios</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let resultado of resultados">
+            <td>{{ resultado.test_id }}</td>
+            <td>{{ resultado.puntaje }}</td>
+            <td>{{ resultado.resultado }}</td>
+            <td>{{ resultado.comentarios }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ng-template #noResultados>
+      <p>No se encontraron resultados.</p>
+    </ng-template>
+  </div>
+</div>

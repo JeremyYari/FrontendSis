@@ -1,0 +1,36 @@
+<router-outlet>
+  <app-navbar-simple></app-navbar-simple>
+</router-outlet>
+<div class="rest">
+  <div class="announcement-container">
+    <div class="rest">
+      <div class="announcement-container">
+        <div *ngIf="preguntas.length > 0 && !resultado?.completado; else graciasTemplate">
+          <h2>Test de Ansiedad</h2>
+          <p>ID de Usuario: {{ usuarioId }}</p>
+          <h3>{{ preguntas[preguntaActualIndex].pregunta }}</h3>
+          <form>
+            <div *ngFor="let respuesta of respuestas">
+              <label>
+                <input type="radio" name="respuesta"
+                      [value]="respuesta.respuesta_id"
+                      [(ngModel)]="respuestaActualId"
+                      (change)="seleccionarRespuesta(respuesta.respuesta_id)">
+                {{ respuesta.respuesta }}
+              </label>
+            </div>
+            <button type="button" (click)="guardarRespuestaActual()">Siguiente</button>
+          </form>
+        </div>
+    
+        <ng-template #graciasTemplate>
+          <div>
+            <h2>¡Gracias por completar el test!</h2>
+            <p>Resultado del test: {{ resultado?.resultado }}</p>
+            <div class="form-group">
+              <button onclick="window.location.href='/opcion-usuario'">Regresar</button>
+          </div>
+          </div>
+        </ng-template>
+      </div>    
+</div>

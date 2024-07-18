@@ -1,0 +1,24 @@
+<router-outlet>
+    <app-navbar-simple2></app-navbar-simple2>
+</router-outlet>
+<div class="rest">
+    <div class="announcement-container">
+        <h2>Acerca de nosotros</h2>
+        <p>Si necesita verificar su lista de estudiantes a atender, haga clic en 'Lista de estudiantes', donde podrá 
+            encontrar información detallada sobre cada uno de los alumnos, incluyendo sus nombres, números de 
+            identificación y otros datos relevantes.</p>
+        <p>Si necesita verificar el estado emocional de los estudiantes, específicamente sobre sus niveles de ansiedad, 
+            haga clic en 'Test de ansiedad'. Esta sección le proporcionará acceso a los resultados de las evaluaciones 
+            de ansiedad realizadas por los estudiantes, permitiéndole identificar aquellos que puedan requerir atención 
+            adicional y recursos de apoyo emocional.</p>
+      <div class="form-group">
+          <button onclick="window.location.href='/dashboard'">Lista de estudiantes</button>
+      </div>
+      <div class="form-group">
+          <button onclick="window.location.href='/guia-test'">Empezar test</button>
+      </div>
+      <div class="form-group">
+        <button onclick="window.location.href='/heatmap'">Ver mapa de calor</button>
+    </div>
+  </div>
+</div>

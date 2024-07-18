@@ -1,0 +1,21 @@
+.container-fluid {
+  display: flex;
+  background-color: #027900;
+  color: #ffff;
+  font-size: 35px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.nav-item {
+  padding: 0.8rem;
+  font-size: x-large;
+}
+.btn-sm-square {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  font-weight: normal;
+}
